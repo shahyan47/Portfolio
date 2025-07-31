@@ -1,0 +1,653 @@
+<!DOCTYPE html>
+<html lang="en" class="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio | Shahyan Ahmad Khan</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        .theme-transition * {
+            transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+        }
+        
+        .skill-bar {
+            height: 8px;
+            border-radius: 4px;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .skill-progress {
+            position: absolute;
+            top: 0;
+            left: 0;
+            height: 100%;
+            border-radius: 4px;
+            transition: width 1.5s ease;
+        }
+        
+        .project-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+        }
+        
+        .dark .project-card:hover {
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+        }
+        
+        .nav-link::after {
+            content: '';
+            display: block;
+            width: 0;
+            height: 2px;
+            background: currentColor;
+            transition: width 0.3s;
+        }
+        
+        .nav-link:hover::after {
+            width: 100%;
+        }
+        
+        .active-nav::after {
+            width: 100%;
+        }
+        
+        .hamburger-line {
+            transition: all 0.3s;
+        }
+        
+        .hamburger-active .hamburger-line:nth-child(1) {
+            transform: rotate(45deg) translate(5px, 5px);
+        }
+        
+        .hamburger-active .hamburger-line:nth-child(2) {
+            opacity: 0;
+        }
+        
+        .hamburger-active .hamburger-line:nth-child(3) {
+            transform: rotate(-45deg) translate(5px, -5px);
+        }
+    </style>
+</head>
+<body class="theme-transition bg-gray-50 dark:bg-gray-900 text-gray-800 dark:text-gray-200 min-h-screen">
+    <!-- Header/Navigation -->
+    <header class="fixed w-full z-50 bg-white/80 dark:bg-gray-900/80 backdrop-blur-md shadow-sm">
+        <div class="container mx-auto px-6 py-4">
+            <div class="flex justify-between items-center">
+                <a href="#" class="text-2xl font-bold text-indigo-600 dark:text-indigo-400">Shahyan Ahmad Khan</a>
+                
+                <!-- Desktop Navigation -->
+                <nav class="hidden md:flex space-x-8">
+                    <a href="#home" class="nav-link active-nav">Home</a>
+                    <a href="#about" class="nav-link">About</a>
+                    <a href="#skills" class="nav-link">Skills</a>
+                    <a href="#projects" class="nav-link">Projects</a>
+                    <a href="#contact" class="nav-link">Contact</a>
+                </nav>
+                
+                <!-- Theme Toggle -->
+                <div class="hidden md:flex items-center space-x-4">
+                    <button id="theme-toggle" class="p-2 rounded-full hover:bg-gray-200 dark:hover:bg-gray-700">
+                        <i class="fas fa-moon dark:hidden"></i>
+                        <i class="fas fa-sun hidden dark:inline"></i>
+                    </button>
+                    <a href="#contact" class="px-4 py-2 bg-indigo-600 text-white rounded-md hover:bg-indigo-700 transition">Hire Me</a>
+                </div>
+                
+                <!-- Mobile Menu Button -->
+                <button id="mobile-menu-button" class="md:hidden flex flex-col space-y-1.5">
+                    <span class="hamburger-line w-6 h-0.5 bg-gray-800 dark:bg-gray-200"></span>
+                    <span class="hamburger-line w-6 h-0.5 bg-gray-800 dark:bg-gray-200"></span>
+                    <span class="hamburger-line w-6 h-0.5 bg-gray-800 dark:bg-gray-200"></span>
+                </button>
+            </div>
+            
+            <!-- Mobile Navigation -->
+            <div id="mobile-menu" class="hidden md:hidden mt-4 pb-4">
+                <div class="flex flex-col space-y-4">
+                    <a href="#home" class="nav-link active-nav">Home</a>
+                    <a href="#about" class="nav-link">About</a>
+                    <a href="#skills" class="nav-link">Skills</a>
+                    <a href="#projects" class="nav-link">Projects</a>
+                    <a href="#contact" class="nav-link">Contact</a>
+                </div>
+                <div class="mt-4 flex items-center justify-between">
+                    <button id="mobile-theme-toggle" class="p-2 rounded-full hover:bg-gray-200 dark:hover:bg-gray-700">
+                        <i class="fas fa-moon dark:hidden"></i>
+                        <i class="fas fa-sun hidden dark:inline"></i>
+                    </button>
+                    <a href="#contact" class="px-4 py-2 bg-indigo-600 text-white rounded-md hover:bg-indigo-700 transition">Hire Me</a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="home" class="min-h-screen flex items-center pt-20">
+        <div class="container mx-auto px-6 py-12 md:py-24">
+            <div class="flex flex-col md:flex-row items-center">
+                <div class="md:w-1/2 mb-12 md:mb-0">
+                    <h1 class="text-4xl md:text-6xl font-bold mb-4">Hi, I'm <span class="text-indigo-600 dark:text-indigo-400">Shahyan Ahmad Khan</span></h1>
+                    <h2 class="text-2xl md:text-3xl font-semibold mb-6">Frontent Developer</h2>
+                    <p class="text-lg mb-8 max-w-lg">Motivated professional skilled in front-end web development and business growth. Seeking a role that blends technical expertise with client acquisition to build engaging digital solutions and drive company success.</p>
+                    <div class="flex space-x-4">
+                        <a href="#projects" class="px-6 py-3 bg-indigo-600 text-white rounded-md hover:bg-indigo-700 transition">View Work</a>
+                        <a href="#contact" class="px-6 py-3 border border-indigo-600 text-indigo-600 dark:text-indigo-400 rounded-md hover:bg-indigo-50 dark:hover:bg-gray-800 transition">Contact Me</a>
+                    </div>
+                </div>
+                <div class="md:w-1/2 flex justify-center">
+                    <div class="relative w-64 h-64 md:w-80 md:h-80 rounded-full overflow-hidden border-4 border-indigo-600 dark:border-indigo-400 shadow-xl">
+                        <img src="sak1.jpg" 
+                             alt="John Doe" 
+                             class="w-full h-full object-cover">
+                        <div class="absolute inset-0 bg-indigo-600 opacity-10 dark:opacity-20"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-20 bg-gray-100 dark:bg-gray-800">
+        <div class="container mx-auto px-6">
+            <h2 class="text-3xl font-bold text-center mb-12">About <span class="text-indigo-600 dark:text-indigo-400">Me</span></h2>
+            
+            <div class="flex flex-col md:flex-row items-center">
+                <div class="md:w-1/3 mb-8 md:mb-0 flex justify-center">
+                    <div class="w-64 h-64 rounded-full overflow-hidden border-4 border-indigo-600 dark:border-indigo-400 shadow-lg">
+                        <img src="sak1.jpg"
+                             alt="John Doe" 
+                             class="w-full h-full object-cover">
+                    </div>
+                </div>
+                
+                <div class="md:w-2/3 md:pl-12">
+                    <h3 class="text-2xl font-semibold mb-4">Who am I?</h3>
+                    <p class="mb-6">Hi, I’m Shahyan Ahmad Khan — a passionate web developer and aspiring business strategist from Lucknow. I specialize in building responsive websites using HTML, CSS, JavaScript, and MongoDB. I enjoy turning ideas into real products and have a growing interest in how tech and business come together. I'm always eager to learn, solve problems, and create experiences that leave a lasting impact.
+
+</p>
+                    
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
+                        <div>
+                            <h4 class="font-semibold mb-2">Personal Info</h4>
+                            <ul class="space-y-2">
+                                <li><span class="font-medium">Name:</span> Shahyan Ahmad Khan</li>
+                                <li><span class="font-medium">Age:</span> 21</li>
+                                <li><span class="font-medium">Location:</span>Lucknow</li>
+                                <li><span class="font-medium">Email:</span> shahyan350gmail.com</li>
+                            </ul>
+                        </div>
+                        <div>
+                            <h4 class="font-semibold mb-2">Education</h4>
+                            <ul class="space-y-2">
+                                <li>
+                                    <span class="font-medium">Bachelor of Computer Application</span><br>
+                                    Integral University, 2022-2025
+                                </li>
+                                <li>
+                                    <span class="font-medium">Intermediate</span><br>
+                                    Lucknow Model Public Inter College,2022
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                    <div class="flex space-x-4">
+                        <a href="https://github.com/shahyan47" class="px-4 py-2 bg-gray-800 text-white rounded-md hover:bg-gray-700 dark:bg-gray-200 dark:text-gray-800 dark:hover:bg-gray-300 transition flex items-center">
+                            <i class="fab fa-github mr-2"></i> GitHub
+                        </a>
+                        <a href="http://www.linkedin.com/in/shahyan-khan-b61763297"
+
+
+
+ class="px-4 py-2 bg-blue-600 text-white rounded-md hover:bg-blue-700 transition flex items-center">
+                            <i class="fab fa-linkedin mr-2"></i> LinkedIn
+                        </a>
+                        <a href="#" class="px-4 py-2 bg-blue-400 text-white rounded-md hover:bg-blue-500 transition flex items-center">
+                            <i class="fab fa-twitter mr-2"></i> Twitter
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="py-20">
+        <div class="container mx-auto px-6">
+            <h2 class="text-3xl font-bold text-center mb-12">My <span class="text-indigo-600 dark:text-indigo-400">Skills</span></h2>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
+                <div>
+                    <h3 class="text-2xl font-semibold mb-6">Technical Skills</h3>
+                    
+                    <div class="space-y-6">
+                        <div>
+                            <div class="flex justify-between mb-2">
+                                <span>HTML</span>
+                                <span>95%</span>
+                            </div>
+                            <div class="skill-bar bg-gray-200 dark:bg-gray-700">
+                                <div class="skill-progress bg-indigo-600 dark:bg-indigo-400" style="width: 95%"></div>
+                            </div>
+                        </div>
+                        
+                        <div>
+                            <div class="flex justify-between mb-2">
+                                <span>CSS</span>
+                                <span>90%</span>
+                            </div>
+                            <div class="skill-bar bg-gray-200 dark:bg-gray-700">
+                                <div class="skill-progress bg-indigo-600 dark:bg-indigo-400" style="width: 90%"></div>
+                            </div>
+                        </div>
+                        
+                        <div>
+                            <div class="flex justify-between mb-2">
+                                <span>JavaScript</span>
+                                <span>85%</span>
+                            </div>
+                            <div class="skill-bar bg-gray-200 dark:bg-gray-700">
+                                <div class="skill-progress bg-indigo-600 dark:bg-indigo-400" style="width: 85%"></div>
+                            </div>
+                        </div>
+                        
+                        <div>
+                            <div class="flex justify-between mb-2">
+                                <span>Bootstrap</span>
+                                <span>80%</span>
+                            </div>
+                            <div class="skill-bar bg-gray-200 dark:bg-gray-700">
+                                <div class="skill-progress bg-indigo-600 dark:bg-indigo-400" style="width: 80%"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div>
+                    <h3 class="text-2xl font-semibold mb-6">Professional Skills</h3>
+                    
+                    <div class="space-y-6">
+                        <div>
+                            <div class="flex justify-between mb-2">
+                                <span>Communication</span>
+                                <span>90%</span>
+                            </div>
+                            <div class="skill-bar bg-gray-200 dark:bg-gray-700">
+                                <div class="skill-progress bg-indigo-600 dark:bg-indigo-400" style="width: 90%"></div>
+                            </div>
+                        </div>
+                        
+                        <div>
+                            <div class="flex justify-between mb-2">
+                                <span>Teamwork</span>
+                                <span>85%</span>
+                            </div>
+                            <div class="skill-bar bg-gray-200 dark:bg-gray-700">
+                                <div class="skill-progress bg-indigo-600 dark:bg-indigo-400" style="width: 85%"></div>
+                            </div>
+                        </div>
+                        
+                        <div>
+                            <div class="flex justify-between mb-2">
+                                <span>Problem Solving</span>
+                                <span>95%</span>
+                            </div>
+                            <div class="skill-bar bg-gray-200 dark:bg-gray-700">
+                                <div class="skill-progress bg-indigo-600 dark:bg-indigo-400" style="width: 95%"></div>
+                            </div>
+                        </div>
+                        
+                        <div>
+                            <div class="flex justify-between mb-2">
+                                <span>Project Management</span>
+                                <span>75%</span>
+                            </div>
+                            <div class="skill-bar bg-gray-200 dark:bg-gray-700">
+                                <div class="skill-progress bg-indigo-600 dark:bg-indigo-400" style="width: 75%"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="mt-16">
+                <h3 class="text-2xl font-semibold mb-8 text-center">Tools & Technologies</h3>
+                
+                <div class="flex flex-wrap justify-center gap-6">
+                    <div class="w-20 h-20 rounded-full bg-white dark:bg-gray-800 shadow-md flex items-center justify-center hover:shadow-lg transition">
+                        <i class="fab fa-html5 text-4xl text-orange-500"></i>
+                    </div>
+                    <div class="w-20 h-20 rounded-full bg-white dark:bg-gray-800 shadow-md flex items-center justify-center hover:shadow-lg transition">
+                        <i class="fab fa-css3-alt text-4xl text-blue-500"></i>
+                    </div>
+                    <div class="w-20 h-20 rounded-full bg-white dark:bg-gray-800 shadow-md flex items-center justify-center hover:shadow-lg transition">
+                        <i class="fab fa-js text-4xl text-yellow-400"></i>
+                    </div>
+                    <div class="w-20 h-20 rounded-full bg-white dark:bg-gray-800 shadow-md flex items-center justify-center hover:shadow-lg transition">
+                        <i class="fab fa-react text-4xl text-blue-400"></i>
+                    </div>
+                    <div class="w-20 h-20 rounded-full bg-white dark:bg-gray-800 shadow-md flex items-center justify-center hover:shadow-lg transition">
+                        <i class="fab fa-node-js text-4xl text-green-500"></i>
+                    </div>
+                    <div class="w-20 h-20 rounded-full bg-white dark:bg-gray-800 shadow-md flex items-center justify-center hover:shadow-lg transition">
+                        <i class="fab fa-git-alt text-4xl text-orange-600"></i>
+                    </div>
+                    <div class="w-20 h-20 rounded-full bg-white dark:bg-gray-800 shadow-md flex items-center justify-center hover:shadow-lg transition">
+                        <i class="fab fa-figma text-4xl text-purple-500"></i>
+                    </div>
+                    <div class="w-20 h-20 rounded-full bg-white dark:bg-gray-800 shadow-md flex items-center justify-center hover:shadow-lg transition">
+                        <i class="fas fa-database text-4xl text-blue-600"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="py-20 bg-gray-100 dark:bg-gray-800">
+        <div class="container mx-auto px-6">
+            <h2 class="text-3xl font-bold text-center mb-12">My <span class="text-indigo-600 dark:text-indigo-400">Projects</span></h2>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Project 1 -->
+                <div class="project-card bg-white dark:bg-gray-700 rounded-lg overflow-hidden shadow-md transition duration-300">
+                    <div class="h-48 overflow-hidden">
+                        <img src="quiz.png" 
+                             alt="Quiz App" 
+                             class="w-full h-full object-cover">
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold mb-2">Quiz App</h3>
+                        <p class="text-gray-600 dark:text-gray-300 mb-4">Created a dynamic Quiz App using HTML, CSS, and JavaScript. Features include multiple-choice questions, real-time score tracking, and interactive UI. Designed for smooth user experience with automatic result display and responsive design.</p>
+
+
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            <span class="px-2 py-1 bg-indigo-100 dark:bg-indigo-900 text-indigo-800 dark:text-indigo-200 text-xs rounded">HTML</span>
+                            <span class="px-2 py-1 bg-indigo-100 dark:bg-indigo-900 text-indigo-800 dark:text-indigo-200 text-xs rounded">CSS</span>
+                            <span class="px-2 py-1 bg-indigo-100 dark:bg-indigo-900 text-indigo-800 dark:text-indigo-200 text-xs rounded">JavaScript</span>
+                        </div>
+                        <div class="flex space-x-3">
+                            <a href="https://shahyan47.github.io/Quiz/" class="text-indigo-600 dark:text-indigo-400 hover:underline">Live Demo</a>
+                            <a href="https://github.com/shahyan47/Quiz/blob/main/index.html" class="text-indigo-600 dark:text-indigo-400 hover:underline">Source Code</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Project 2 -->
+                <div class="project-card bg-white dark:bg-gray-700 rounded-lg overflow-hidden shadow-md transition duration-300">
+                    <div class="h-48 overflow-hidden">
+                        <img src="Calci.jpg" 
+                             alt="calculator App" 
+                             class="w-full h-full object-cover">
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold mb-2">Calculator App</h3>
+                        <p class="text-gray-600 dark:text-gray-300 mb-4">Developed a responsive calculator application using HTML, CSS, and JavaScript to perform basic arithmetic operations. Designed a clean and user-friendly interface with interactive buttons and real-time input handling. Implemented JavaScript logic for accurate calculations, error handling, and smooth functionality. </p>
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            <span class="px-2 py-1 bg-indigo-100 dark:bg-indigo-900 text-indigo-800 dark:text-indigo-200 text-xs rounded">HTML</span>
+                            <span class="px-2 py-1 bg-indigo-100 dark:bg-indigo-900 text-indigo-800 dark:text-indigo-200 text-xs rounded">CSS</span>
+                            <span class="px-2 py-1 bg-indigo-100 dark:bg-indigo-900 text-indigo-800 dark:text-indigo-200 text-xs rounded">JavaScript</span>
+                        </div>
+                        <div class="flex space-x-3">
+                            <a href="https://shahyan47.github.io/Calculator/" class="text-indigo-600 dark:text-indigo-400 hover:underline">Live Demo</a>
+                            <a href="https://github.com/shahyan47/Calculator/blob/main/index.html" class="text-indigo-600 dark:text-indigo-400 hover:underline">Source Code</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Project 3 -->
+                <div class="project-card bg-white dark:bg-gray-700 rounded-lg overflow-hidden shadow-md transition duration-300">
+                    <div class="h-48 overflow-hidden">
+                        <img src="https://theinvisiblenarad.com/wp-content/uploads/2024/09/basic-exercise-1024x576.webp" 
+                             alt="Social Media Dashboard" 
+                             class="w-full h-full object-cover">
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold mb-2">Gym Workout Schedule</h3>
+                        <p class="text-gray-600 dark:text-gray-300 mb-4">Built a responsive Gym Workout Schedule Web App using HTML, CSS, JavaScript, and Bootstrap. It includes a 7-day workout plan, dark mode toggle, progress tracker, exercise images with sets/reps, and a diet plan for muscle gain and weight loss.</p>
+
+
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            <span class="px-2 py-1 bg-indigo-100 dark:bg-indigo-900 text-indigo-800 dark:text-indigo-200 text-xs rounded">HTML</span>
+                            <span class="px-2 py-1 bg-indigo-100 dark:bg-indigo-900 text-indigo-800 dark:text-indigo-200 text-xs rounded">CSS</span>
+                            <span class="px-2 py-1 bg-indigo-100 dark:bg-indigo-900 text-indigo-800 dark:text-indigo-200 text-xs rounded">JavaScript</span>
+                        </div>
+                        <div class="flex space-x-3">
+                            <a href="https://shahyan47.github.io/Workout-Schedule/" class="text-indigo-600 dark:text-indigo-400 hover:underline">Live Demo</a>
+                            <a href="https://github.com/shahyan47/Workout-Schedule" class="text-indigo-600 dark:text-indigo-400 hover:underline">Source Code</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+             
+                
+            
+            <div class="text-center mt-12">
+                <a href="project.html" class="px-6 py-3 border border-indigo-600 text-indigo-600 dark:text-indigo-400 rounded-md hover:bg-indigo-50 dark:hover:bg-gray-700 transition inline-flex items-center">
+                    View All Projects <i class="fas fa-arrow-right ml-2"></i>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-20">
+        <div class="container mx-auto px-6">
+            <h2 class="text-3xl font-bold text-center mb-12">Get In <span class="text-indigo-600 dark:text-indigo-400">Touch</span></h2>
+            
+            <div class="flex flex-col md:flex-row gap-12">
+                <div class="md:w-1/2">
+                    <h3 class="text-2xl font-semibold mb-6">Contact Information</h3>
+                    <p class="mb-8">Feel free to reach out to me for any questions or opportunities. I'll get back to you as soon as possible!</p>
+                    
+                    <div class="space-y-6">
+                        <div class="flex items-start">
+                            <div class="bg-indigo-100 dark:bg-indigo-900 p-3 rounded-full mr-4">
+                                <i class="fas fa-envelope text-indigo-600 dark:text-indigo-400"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-semibold">Email</h4>
+                                <p class="text-gray-600 dark:text-gray-300">shahyan350gmail.com</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-start">
+                            <div class="bg-indigo-100 dark:bg-indigo-900 p-3 rounded-full mr-4">
+                                <i class="fas fa-phone-alt text-indigo-600 dark:text-indigo-400"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-semibold">Phone</h4>
+                                <p class="text-gray-600 dark:text-gray-300">+91(7985813615)</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-start">
+                            <div class="bg-indigo-100 dark:bg-indigo-900 p-3 rounded-full mr-4">
+                                <i class="fas fa-map-marker-alt text-indigo-600 dark:text-indigo-400"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-semibold">Location</h4>
+                                <p class="text-gray-600 dark:text-gray-300">UP, Lucknow</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="mt-8">
+                        <h4 class="font-semibold mb-4">Follow Me</h4>
+                        <div class="flex space-x-4">
+                            <a href="#" class="w-10 h-10 rounded-full bg-gray-200 dark:bg-gray-700 flex items-center justify-center hover:bg-indigo-600 hover:text-white transition">
+                                <i class="fab fa-github"></i>
+                            </a>
+                            <a href="#" class="w-10 h-10 rounded-full bg-gray-200 dark:bg-gray-700 flex items-center justify-center hover:bg-blue-600 hover:text-white transition">
+                                <i class="fab fa-linkedin-in"></i>
+                            </a>
+                            <a href="#" class="w-10 h-10 rounded-full bg-gray-200 dark:bg-gray-700 flex items-center justify-center hover:bg-blue-400 hover:text-white transition">
+                                <i class="fab fa-twitter"></i>
+                            </a>
+                            <a href="#" class="w-10 h-10 rounded-full bg-gray-200 dark:bg-gray-700 flex items-center justify-center hover:bg-pink-600 hover:text-white transition">
+                                <i class="fab fa-instagram"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="md:w-1/2">
+                    <form class="space-y-6">
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                            <div>
+                                <label for="name" class="block mb-2 font-medium">Your Name</label>
+                                <input type="text" id="name" class="w-full px-4 py-2 border border-gray-300 dark:border-gray-600 rounded-md focus:outline-none focus:ring-2 focus:ring-indigo-500 bg-white dark:bg-gray-700">
+                            </div>
+                            <div>
+                                <label for="email" class="block mb-2 font-medium">Your Email</label>
+                                <input type="email" id="email" class="w-full px-4 py-2 border border-gray-300 dark:border-gray-600 rounded-md focus:outline-none focus:ring-2 focus:ring-indigo-500 bg-white dark:bg-gray-700">
+                            </div>
+                        </div>
+                        <div>
+                            <label for="subject" class="block mb-2 font-medium">Subject</label>
+                            <input type="text" id="subject" class="w-full px-4 py-2 border border-gray-300 dark:border-gray-600 rounded-md focus:outline-none focus:ring-2 focus:ring-indigo-500 bg-white dark:bg-gray-700">
+                        </div>
+                        <div>
+                            <label for="message" class="block mb-2 font-medium">Message</label>
+                            <textarea id="message" rows="5" class="w-full px-4 py-2 border border-gray-300 dark:border-gray-600 rounded-md focus:outline-none focus:ring-2 focus:ring-indigo-500 bg-white dark:bg-gray-700"></textarea>
+                        </div>
+                        <button type="submit" class="px-6 py-3 bg-indigo-600 text-white rounded-md hover:bg-indigo-700 transition w-full md:w-auto">Send Message</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-gray-300 py-12">
+        <div class="container mx-auto px-6">
+            <div class="flex flex-col md:flex-row justify-between items-center">
+                <div class="mb-6 md:mb-0">
+                    <a href="#" class="text-2xl font-bold text-indigo-400">SAK</a>
+                    <p class="mt-2">Creating digital experiences that matter.</p>
+                </div>
+                
+                <div class="flex flex-col items-center md:items-end">
+                    <div class="flex space-x-6 mb-4">
+                        <a href="#" class="hover:text-indigo-400 transition"><i class="fab fa-github"></i></a>
+                        <a href="#" class="hover:text-indigo-400 transition"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#" class="hover:text-indigo-400 transition"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="hover:text-indigo-400 transition"><i class="fab fa-instagram"></i></a>
+                    </div>
+                    <p>&copy; 2025 Shahyan Ahmad Khan. All rights reserved.</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+  <script>
+  tailwind.config = {
+    darkMode: 'class',
+  }
+</script>
+
+   <script>
+    // Get HTML root and toggles
+    const html = document.documentElement;
+    const themeToggle = document.getElementById('theme-toggle');
+    const mobileThemeToggle = document.getElementById('mobile-theme-toggle');
+
+    // Theme Toggle Function
+    function toggleTheme() {
+        html.classList.toggle('dark');
+        const theme = html.classList.contains('dark') ? 'dark' : 'light';
+        localStorage.setItem('theme', theme);
+    }
+
+    // Add toggle events
+    if (themeToggle) themeToggle.addEventListener('click', toggleTheme);
+    if (mobileThemeToggle) mobileThemeToggle.addEventListener('click', toggleTheme);
+
+    // Apply stored theme on page load
+    const savedTheme = localStorage.getItem('theme');
+    if (
+        savedTheme === 'dark' ||
+        (!savedTheme && window.matchMedia('(prefers-color-scheme: dark)').matches)
+    ) {
+        html.classList.add('dark');
+    } else {
+        html.classList.remove('dark');
+    }
+
+    // Mobile Menu Toggle
+    const mobileMenuButton = document.getElementById('mobile-menu-button');
+    const mobileMenu = document.getElementById('mobile-menu');
+
+    if (mobileMenuButton && mobileMenu) {
+        mobileMenuButton.addEventListener('click', () => {
+            mobileMenuButton.classList.toggle('hamburger-active');
+            mobileMenu.classList.toggle('hidden');
+        });
+    }
+
+    // Smooth Scrolling for Nav Links
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
+            e.preventDefault();
+            const targetId = this.getAttribute('href');
+            const targetElement = document.querySelector(targetId);
+            if (targetElement) {
+                window.scrollTo({
+                    top: targetElement.offsetTop - 80,
+                    behavior: 'smooth'
+                });
+
+                // Hide mobile menu
+                if (mobileMenu && !mobileMenu.classList.contains('hidden')) {
+                    mobileMenuButton?.classList.remove('hamburger-active');
+                    mobileMenu.classList.add('hidden');
+                }
+            }
+        });
+    });
+
+    // Update active nav link on scroll
+    const sections = document.querySelectorAll('section');
+    const navLinks = document.querySelectorAll('.nav-link');
+
+    window.addEventListener('scroll', () => {
+        let current = '';
+        sections.forEach(section => {
+            const sectionTop = section.offsetTop;
+            if (pageYOffset >= sectionTop - 150) {
+                current = section.getAttribute('id');
+            }
+        });
+
+        navLinks.forEach(link => {
+            link.classList.remove('active-nav');
+            if (link.getAttribute('href') === `#${current}`) {
+                link.classList.add('active-nav');
+            }
+        });
+    });
+
+    // Animate skill bars
+    const skillBars = document.querySelectorAll('.skill-progress');
+
+    const animateSkillBars = () => {
+        skillBars.forEach(bar => {
+            const rect = bar.parentElement.getBoundingClientRect();
+            if (rect.top <= window.innerHeight - 100) {
+                const value = bar.parentElement.previousElementSibling?.lastElementChild?.textContent;
+                if (value) {
+                    bar.style.width = value;
+                }
+            }
+        });
+    };
+
+    window.addEventListener('scroll', animateSkillBars);
+    window.addEventListener('load', animateSkillBars);
+</script>
+   
+   
+</body>
+</html>
