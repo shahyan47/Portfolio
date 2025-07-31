@@ -1,0 +1,254 @@
+<html lang="en" class="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>All Projects | Shahyan Ahmad Khan</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <style>
+    .project-card:hover {
+      transform: translateY(-5px);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+    }
+    .project-card img {
+      transition: transform 0.5s ease;
+    }
+    .project-card:hover img {
+      transform: scale(1.05);
+    }
+  </style>
+</head>
+<body class="bg-gray-50 dark:bg-gray-900 text-gray-800 dark:text-gray-200">
+
+  <!-- ✅ Theme Toggle Button (You can place this in a navbar) -->
+  <div class="fixed top-4 right-4 z-50">
+    <button id="theme-toggle" class="p-3 bg-white dark:bg-gray-800 rounded-full shadow-lg hover:bg-gray-100 dark:hover:bg-gray-700 transition">
+      <i class="fas fa-moon dark:hidden"></i>
+      <i class="fas fa-sun hidden dark:inline"></i>
+    </button>
+  </div>
+
+  <section class="py-20">
+    <div class="container mx-auto px-6">
+      <h2 class="text-3xl font-bold text-center mb-12">All <span class="text-indigo-600 dark:text-indigo-400">Projects</span></h2>
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+
+        <!-- Project Card Template -->
+        <div class="project-card bg-white dark:bg-gray-700 rounded-lg overflow-hidden shadow-md transition duration-300">
+          <div class="h-48 overflow-hidden">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRvM_qs5BSSM7XkYF-J9cn44gVdL4YwzPD9BA&s" alt="Project Title" class="w-full h-full object-cover">
+          </div>
+          <div class="p-6">
+            <h3 class="text-xl font-semibold mb-2">Amazon-Clone</h3>
+            <p class="text-gray-600 dark:text-gray-300 mb-4">Created an Amazon homepage clone using HTML and CSS with a responsive layout, navigation bar, product sections, and footer to showcase front-end development skills.</p>
+
+
+            <div class="flex flex-wrap gap-2 mb-4">
+              <span class="px-2 py-1 bg-indigo-100 dark:bg-indigo-900 text-indigo-800 dark:text-indigo-200 text-xs rounded">HTML</span>
+              <span class="px-2 py-1 bg-indigo-100 dark:bg-indigo-900 text-indigo-800 dark:text-indigo-200 text-xs rounded">CSS</span>
+              <span class="px-2 py-1 bg-indigo-100 dark:bg-indigo-900 text-indigo-800 dark:text-indigo-200 text-xs rounded">JavaScript</span>
+            </div>
+            <div class="flex space-x-3">
+              <a href="https://shahyan47.github.io/Amazon-Clone/" class="text-indigo-600 dark:text-indigo-400 hover:underline">Live Demo</a>
+              <a href="https://github.com/shahyan47/Amazon-Clone" class="text-indigo-600 dark:text-indigo-400 hover:underline">Source Code</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="project-card bg-white dark:bg-gray-700 rounded-lg overflow-hidden shadow-md transition duration-300">
+          <div class="h-48 overflow-hidden">
+            <img src="your-image.jpg" alt="Project Title" class="w-full h-full object-cover">
+          </div>
+          <div class="p-6">
+            <h3 class="text-xl font-semibold mb-2">Upload Project Soon...</h3>
+            <p class="text-gray-600 dark:text-gray-300 mb-4">Stay tuned! More exciting projects will be uploaded shortly.</p>
+            <div class="flex flex-wrap gap-2 mb-4">
+              <span class="px-2 py-1 bg-indigo-100 dark:bg-indigo-900 text-indigo-800 dark:text-indigo-200 text-xs rounded">HTML</span>
+              <span class="px-2 py-1 bg-indigo-100 dark:bg-indigo-900 text-indigo-800 dark:text-indigo-200 text-xs rounded">CSS</span>
+              <span class="px-2 py-1 bg-indigo-100 dark:bg-indigo-900 text-indigo-800 dark:text-indigo-200 text-xs rounded">JavaScript</span>
+            </div>
+            <div class="flex space-x-3">
+              <a href="#" class="text-indigo-600 dark:text-indigo-400 hover:underline">Live Demo</a>
+              <a href="#" class="text-indigo-600 dark:text-indigo-400 hover:underline">Source Code</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="project-card bg-white dark:bg-gray-700 rounded-lg overflow-hidden shadow-md transition duration-300">
+          <div class="h-48 overflow-hidden">
+            <img src="your-image.jpg" alt="Project Title" class="w-full h-full object-cover">
+          </div>
+
+       <div class="p-6">
+            <h3 class="text-xl font-semibold mb-2">Upload Project Soon...</h3>
+            <p class="text-gray-600 dark:text-gray-300 mb-4">Stay tuned! More exciting projects will be uploaded shortly.</p>
+            <div class="flex flex-wrap gap-2 mb-4">
+              <span class="px-2 py-1 bg-indigo-100 dark:bg-indigo-900 text-indigo-800 dark:text-indigo-200 text-xs rounded">HTML</span>
+              <span class="px-2 py-1 bg-indigo-100 dark:bg-indigo-900 text-indigo-800 dark:text-indigo-200 text-xs rounded">CSS</span>
+              <span class="px-2 py-1 bg-indigo-100 dark:bg-indigo-900 text-indigo-800 dark:text-indigo-200 text-xs rounded">JavaScript</span>
+            </div>
+            <div class="flex space-x-3">
+              <a href="#" class="text-indigo-600 dark:text-indigo-400 hover:underline">Live Demo</a>
+              <a href="#" class="text-indigo-600 dark:text-indigo-400 hover:underline">Source Code</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="project-card bg-white dark:bg-gray-700 rounded-lg overflow-hidden shadow-md transition duration-300">
+          <div class="h-48 overflow-hidden">
+            <img src="your-image.jpg" alt="Project Title" class="w-full h-full object-cover">
+          </div>
+<div class="p-6">
+            <h3 class="text-xl font-semibold mb-2">Upload Project Soon...</h3>
+            <p class="text-gray-600 dark:text-gray-300 mb-4">Stay tuned! More exciting projects will be uploaded shortly.</p>
+            <div class="flex flex-wrap gap-2 mb-4">
+              <span class="px-2 py-1 bg-indigo-100 dark:bg-indigo-900 text-indigo-800 dark:text-indigo-200 text-xs rounded">HTML</span>
+              <span class="px-2 py-1 bg-indigo-100 dark:bg-indigo-900 text-indigo-800 dark:text-indigo-200 text-xs rounded">CSS</span>
+              <span class="px-2 py-1 bg-indigo-100 dark:bg-indigo-900 text-indigo-800 dark:text-indigo-200 text-xs rounded">JavaScript</span>
+            </div>
+            <div class="flex space-x-3">
+              <a href="#" class="text-indigo-600 dark:text-indigo-400 hover:underline">Live Demo</a>
+              <a href="#" class="text-indigo-600 dark:text-indigo-400 hover:underline">Source Code</a>
+            </div>
+          </div>
+        </div>
+        
+
+        <div class="project-card bg-white dark:bg-gray-700 rounded-lg overflow-hidden shadow-md transition duration-300">
+          <div class="h-48 overflow-hidden">
+            <img src="your-image.jpg" alt="Project Title" class="w-full h-full object-cover">
+          </div>
+        <div class="p-6">
+            <h3 class="text-xl font-semibold mb-2">Upload Project Soon...</h3>
+            <p class="text-gray-600 dark:text-gray-300 mb-4">Stay tuned! More exciting projects will be uploaded shortly.</p>
+            <div class="flex flex-wrap gap-2 mb-4">
+              <span class="px-2 py-1 bg-indigo-100 dark:bg-indigo-900 text-indigo-800 dark:text-indigo-200 text-xs rounded">HTML</span>
+              <span class="px-2 py-1 bg-indigo-100 dark:bg-indigo-900 text-indigo-800 dark:text-indigo-200 text-xs rounded">CSS</span>
+              <span class="px-2 py-1 bg-indigo-100 dark:bg-indigo-900 text-indigo-800 dark:text-indigo-200 text-xs rounded">JavaScript</span>
+            </div>
+            <div class="flex space-x-3">
+              <a href="#" class="text-indigo-600 dark:text-indigo-400 hover:underline">Live Demo</a>
+              <a href="#" class="text-indigo-600 dark:text-indigo-400 hover:underline">Source Code</a>
+            </div>
+          </div>
+        </div>
+        
+        <div class="project-card bg-white dark:bg-gray-700 rounded-lg overflow-hidden shadow-md transition duration-300">
+          <div class="h-48 overflow-hidden">
+            <img src="your-image.jpg" alt="Project Title" class="w-full h-full object-cover">
+          </div>
+        <div class="p-6">
+            <h3 class="text-xl font-semibold mb-2">Upload Project Soon...</h3>
+            <p class="text-gray-600 dark:text-gray-300 mb-4">Stay tuned! More exciting projects will be uploaded shortly.</p>
+            <div class="flex flex-wrap gap-2 mb-4">
+              <span class="px-2 py-1 bg-indigo-100 dark:bg-indigo-900 text-indigo-800 dark:text-indigo-200 text-xs rounded">HTML</span>
+              <span class="px-2 py-1 bg-indigo-100 dark:bg-indigo-900 text-indigo-800 dark:text-indigo-200 text-xs rounded">CSS</span>
+              <span class="px-2 py-1 bg-indigo-100 dark:bg-indigo-900 text-indigo-800 dark:text-indigo-200 text-xs rounded">JavaScript</span>
+            </div>
+            <div class="flex space-x-3">
+              <a href="#" class="text-indigo-600 dark:text-indigo-400 hover:underline">Live Demo</a>
+              <a href="#" class="text-indigo-600 dark:text-indigo-400 hover:underline">Source Code</a>
+            </div>
+          </div>
+        </div>
+         
+        <div class="project-card bg-white dark:bg-gray-700 rounded-lg overflow-hidden shadow-md transition duration-300">
+          <div class="h-48 overflow-hidden">
+            <img src="your-image.jpg" alt="Project Title" class="w-full h-full object-cover">
+          </div>
+        <div class="p-6">
+            <h3 class="text-xl font-semibold mb-2">Upload Project Soon...</h3>
+            <p class="text-gray-600 dark:text-gray-300 mb-4">Stay tuned! More exciting projects will be uploaded shortly.</p>
+            <div class="flex flex-wrap gap-2 mb-4">
+              <span class="px-2 py-1 bg-indigo-100 dark:bg-indigo-900 text-indigo-800 dark:text-indigo-200 text-xs rounded">HTML</span>
+              <span class="px-2 py-1 bg-indigo-100 dark:bg-indigo-900 text-indigo-800 dark:text-indigo-200 text-xs rounded">CSS</span>
+              <span class="px-2 py-1 bg-indigo-100 dark:bg-indigo-900 text-indigo-800 dark:text-indigo-200 text-xs rounded">JavaScript</span>
+            </div>
+            <div class="flex space-x-3">
+              <a href="#" class="text-indigo-600 dark:text-indigo-400 hover:underline">Live Demo</a>
+              <a href="#" class="text-indigo-600 dark:text-indigo-400 hover:underline">Source Code</a>
+            </div>
+          </div>
+        </div>
+             <div class="project-card bg-white dark:bg-gray-700 rounded-lg overflow-hidden shadow-md transition duration-300">
+          <div class="h-48 overflow-hidden">
+            <img src="your-image.jpg" alt="Project Title" class="w-full h-full object-cover">
+          </div>
+        <div class="p-6">
+            <h3 class="text-xl font-semibold mb-2">Upload Project Soon...</h3>
+            <p class="text-gray-600 dark:text-gray-300 mb-4">Stay tuned! More exciting projects will be uploaded shortly.</p>
+            <div class="flex flex-wrap gap-2 mb-4">
+              <span class="px-2 py-1 bg-indigo-100 dark:bg-indigo-900 text-indigo-800 dark:text-indigo-200 text-xs rounded">HTML</span>
+              <span class="px-2 py-1 bg-indigo-100 dark:bg-indigo-900 text-indigo-800 dark:text-indigo-200 text-xs rounded">CSS</span>
+              <span class="px-2 py-1 bg-indigo-100 dark:bg-indigo-900 text-indigo-800 dark:text-indigo-200 text-xs rounded">JavaScript</span>
+            </div>
+            <div class="flex space-x-3">
+              <a href="#" class="text-indigo-600 dark:text-indigo-400 hover:underline">Live Demo</a>
+              <a href="#" class="text-indigo-600 dark:text-indigo-400 hover:underline">Source Code</a>
+            </div>
+          </div>
+        </div>
+                 
+        <div class="project-card bg-white dark:bg-gray-700 rounded-lg overflow-hidden shadow-md transition duration-300">
+          <div class="h-48 overflow-hidden">
+            <img src="your-image.jpg" alt="Project Title" class="w-full h-full object-cover">
+          </div>
+        <div class="p-6">
+            <h3 class="text-xl font-semibold mb-2">Upload Project Soon...</h3>
+            <p class="text-gray-600 dark:text-gray-300 mb-4">Stay tuned! More exciting projects will be uploaded shortly.</p>
+            <div class="flex flex-wrap gap-2 mb-4">
+              <span class="px-2 py-1 bg-indigo-100 dark:bg-indigo-900 text-indigo-800 dark:text-indigo-200 text-xs rounded">HTML</span>
+              <span class="px-2 py-1 bg-indigo-100 dark:bg-indigo-900 text-indigo-800 dark:text-indigo-200 text-xs rounded">CSS</span>
+              <span class="px-2 py-1 bg-indigo-100 dark:bg-indigo-900 text-indigo-800 dark:text-indigo-200 text-xs rounded">JavaScript</span>
+            </div>
+            <div class="flex space-x-3">
+              <a href="#" class="text-indigo-600 dark:text-indigo-400 hover:underline">Live Demo</a>
+              <a href="#" class="text-indigo-600 dark:text-indigo-400 hover:underline">Source Code</a>
+            </div>
+          </div>
+        </div>
+
+
+
+         s here -->
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ✅ Theme Toggle Script -->
+  <script>
+    const toggleBtn = document.getElementById('theme-toggle');
+    const moonIcon = toggleBtn.querySelector('.fa-moon');
+    const sunIcon = toggleBtn.querySelector('.fa-sun');
+
+    function applyStoredTheme() {
+      const storedTheme = localStorage.getItem('theme');
+      if (storedTheme === 'dark') {
+        document.documentElement.classList.add('dark');
+      } else {
+        document.documentElement.classList.remove('dark');
+      }
+    }
+
+    function updateIcons() {
+      const isDark = document.documentElement.classList.contains('dark');
+      moonIcon.classList.toggle('hidden', isDark);
+      sunIcon.classList.toggle('hidden', !isDark);
+    }
+
+    // Init on load
+    applyStoredTheme();
+    updateIcons();
+
+    toggleBtn.addEventListener('click', () => {
+      document.documentElement.classList.toggle('dark');
+      const isDark = document.documentElement.classList.contains('dark');
+      localStorage.setItem('theme', isDark ? 'dark' : 'light');
+      updateIcons();
+    });
+  </script>
+
+</body>
+</html> 
